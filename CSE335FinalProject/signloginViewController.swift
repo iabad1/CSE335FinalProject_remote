@@ -8,29 +8,32 @@
 import UIKit
 
 class signloginViewController: UIViewController {
-
+   
+    @IBOutlet weak var signinUsername: UITextField!
+    @IBOutlet weak var signinPass: UITextField!
+    //Signs the user up to firebase after verification
+    @IBAction func signUpAction(_ sender: Any) {
+        //check if username is in firebase or not
+        if (checkUser(inputUser: signinUsername.text!)){
+         //error message
+        }
+        else{ //add user into firebase, set default objects
+            
+        }
+    }
     
-    @IBOutlet weak var signloginHeader: UILabel!
-    var signloginButtonTitle:String?
-    
-    @IBOutlet weak var signloginButton: UIButton!
+    //if user is in firebase return true, else false
+    func checkUser(inputUser:String)->Bool{
+        
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //set the button text on load
-        signloginButton.titleLabel?.text
-        = signloginButtonTitle
         
+        //hides password
+        signinPass.isSecureTextEntry = true
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

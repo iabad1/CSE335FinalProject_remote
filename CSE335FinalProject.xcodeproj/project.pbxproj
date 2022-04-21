@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7AC53A028117A4800332268 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC539F28117A4800332268 /* loginViewController.swift */; };
 		F7C529502810F79D008A84EE /* signloginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5294F2810F79D008A84EE /* signloginViewController.swift */; };
 		F7DA16482804A4210010424A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA16472804A4210010424A /* AppDelegate.swift */; };
 		F7DA164A2804A4210010424A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA16492804A4210010424A /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7AC539F28117A4800332268 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		F7C5294F2810F79D008A84EE /* signloginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signloginViewController.swift; sourceTree = "<group>"; };
 		F7DA16442804A4210010424A /* CSE335FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DA16472804A4210010424A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				F7DA16492804A4210010424A /* SceneDelegate.swift */,
 				F7DA164B2804A4210010424A /* ViewController.swift */,
 				F7DA164D2804A4210010424A /* Main.storyboard */,
+				F7AC539F28117A4800332268 /* loginViewController.swift */,
 				F7C5294F2810F79D008A84EE /* signloginViewController.swift */,
 				F7DA16502804A4230010424A /* Assets.xcassets */,
 				F7DA16522804A4230010424A /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				F7C529502810F79D008A84EE /* signloginViewController.swift in Sources */,
 				F7DA16482804A4210010424A /* AppDelegate.swift in Sources */,
 				F7DA164A2804A4210010424A /* SceneDelegate.swift in Sources */,
+				F7AC53A028117A4800332268 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
