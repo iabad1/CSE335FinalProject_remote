@@ -14,16 +14,9 @@ class loginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    var model = AppViewModel()
     
+    //using the appviewmodel, we can access the login function
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
