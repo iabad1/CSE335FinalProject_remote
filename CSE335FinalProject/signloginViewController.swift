@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import SwiftUI
 
 //Sign-In or Login authentication
 class AppViewModel: ObservableObject{
@@ -16,7 +17,7 @@ class AppViewModel: ObservableObject{
     var isSignedIn:Bool{
         return auth.currentUser != nil
     }
-    
+
     func login(email:String, password:String){
         auth.signIn(withEmail: email, password: password){[weak self] result, error in
             //error handling
@@ -75,6 +76,12 @@ class signloginViewController: UIViewController {
             //once signed up, store the user in the database and initialize their profile using user class which will be implemented soon
             
             viewModel.signedIn = viewModel.isSignedIn
+            
+            if(viewModel.isSignedIn){
+                self.performSegue(withIdentifier: "toProfileView", sender: self)
+                
+            }
+           
         }
         
     }
