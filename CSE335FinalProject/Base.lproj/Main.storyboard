@@ -178,7 +178,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="signUpAction:" destination="SWh-Yr-HZ8" eventType="touchUpInside" id="BFB-DK-siD"/>
-                                    <segue destination="iNd-Dq-AyB" kind="show" identifier="toProfilleView" id="BfM-5h-Qfr"/>
+                                    <segue destination="iNd-Dq-AyB" kind="show" identifier="toProfileView" id="K6r-bx-yWU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzN-B5-RUs">

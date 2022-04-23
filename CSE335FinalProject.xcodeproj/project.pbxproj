@@ -11,6 +11,7 @@
 		F71A07ED28130A9500060AC3 /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71A07EC28130A9500060AC3 /* users.swift */; };
 		F74FED6A28148B8100CDBC29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74FED6928148B8100CDBC29 /* ViewController.swift */; };
 		F74FED6E2814906400CDBC29 /* profileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74FED6D2814906400CDBC29 /* profileTableViewController.swift */; };
+		F7A3E1702814C49B00A5AC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A3E16F2814C49B00A5AC75 /* Assets.xcassets */; };
 		F7AB269E2811CF1E004250DD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F7AB269D2811CF1E004250DD /* FirebaseAuth */; };
 		F7AB26A02811CF1E004250DD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F7AB269F2811CF1E004250DD /* FirebaseDatabase */; };
 		F7AB26A22811CF1E004250DD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F7AB26A12811CF1E004250DD /* FirebaseFirestore */; };
@@ -19,7 +20,6 @@
 		F7DA16482804A4210010424A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA16472804A4210010424A /* AppDelegate.swift */; };
 		F7DA164A2804A4210010424A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA16492804A4210010424A /* SceneDelegate.swift */; };
 		F7DA164F2804A4210010424A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DA164D2804A4210010424A /* Main.storyboard */; };
-		F7DA16512804A4230010424A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DA16502804A4230010424A /* Assets.xcassets */; };
 		F7DA16542804A4230010424A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DA16522804A4230010424A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -28,13 +28,13 @@
 		F71A07EC28130A9500060AC3 /* users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
 		F74FED6928148B8100CDBC29 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F74FED6D2814906400CDBC29 /* profileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTableViewController.swift; sourceTree = "<group>"; };
+		F7A3E16F2814C49B00A5AC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7AB26A32811D713004250DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7AC539F28117A4800332268 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		F7DA16442804A4210010424A /* CSE335FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DA16472804A4210010424A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DA16492804A4210010424A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F7DA164E2804A4210010424A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F7DA16502804A4230010424A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7DA16532804A4230010424A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7DA16552804A4230010424A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +72,7 @@
 		F7DA16462804A4210010424A /* CSE335FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3E16F2814C49B00A5AC75 /* Assets.xcassets */,
 				F74FED6928148B8100CDBC29 /* ViewController.swift */,
 				F71A07EA2812FF8E00060AC3 /* signloginViewController.swift */,
 				F71A07EC28130A9500060AC3 /* users.swift */,
@@ -81,7 +82,6 @@
 				F7DA164D2804A4210010424A /* Main.storyboard */,
 				F74FED6D2814906400CDBC29 /* profileTableViewController.swift */,
 				F7AC539F28117A4800332268 /* loginViewController.swift */,
-				F7DA16502804A4230010424A /* Assets.xcassets */,
 				F7DA16522804A4230010424A /* LaunchScreen.storyboard */,
 				F7DA16552804A4230010424A /* Info.plist */,
 			);
@@ -120,6 +120,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
@@ -156,7 +159,7 @@
 			files = (
 				F7DA16542804A4230010424A /* LaunchScreen.storyboard in Resources */,
 				F7AB26A42811D713004250DD /* GoogleService-Info.plist in Resources */,
-				F7DA16512804A4230010424A /* Assets.xcassets in Resources */,
+				F7A3E1702814C49B00A5AC75 /* Assets.xcassets in Resources */,
 				F7DA164F2804A4210010424A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

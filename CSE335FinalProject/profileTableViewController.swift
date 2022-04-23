@@ -6,20 +6,30 @@
 //
 
 import UIKit
+import Firebase
 
 class profileTableViewController: UITableViewController {
 
     //let viewModel = AppViewModel()
+    private let database = Database.database().reference()
+    var username:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Successful Sign Up!")
+        print(username!)
+        
+        //using username, get the user data from firebase
+        database.child("users").observeSingleEvent(of: .value, with: {snapshot in
+            guard let value = snapshot.value as? [String: Any] else{
+                return
+            }
+            //let username = value["username"]
+            print("Username: \(value)")
+            
+            
+        })
         
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source

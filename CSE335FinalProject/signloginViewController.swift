@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 import SwiftUI
 
 //Sign-In or Login authentication
@@ -64,7 +65,9 @@ class signloginViewController: UIViewController {
         
         //check if the username is in firebase
         if checkUser(inputUser: signinUsername.text!){
+            
             signinErrMSG.text = "Username already exists. Try Again."
+            return
         }
         else{
             guard !signinEmail.text!.isEmpty, !signinPass.text!.isEmpty else{
@@ -77,18 +80,23 @@ class signloginViewController: UIViewController {
             
             viewModel.signedIn = viewModel.isSignedIn
             
-            if(viewModel.isSignedIn){
-                self.performSegue(withIdentifier: "toProfileView", sender: self)
-                
+            if(!viewModel.isSignedIn){
+                signinErrMSG.text = "Invalid Email or Username. Try Again."
             }
            
         }
         
     }
     
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let des = segue.destination as! profileTableViewController
+        if (segue.identifier == "toProfileView"){
+            des.username = signinUsername.text
+        }
+    }
     //if user is in firebase return true, else false
     func checkUser(inputUser:String)->Bool{
-        
+                        
         return false
     }
     
