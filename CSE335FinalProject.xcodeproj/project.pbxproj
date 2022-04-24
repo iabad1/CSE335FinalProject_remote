@@ -11,6 +11,9 @@
 		F71A07ED28130A9500060AC3 /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71A07EC28130A9500060AC3 /* users.swift */; };
 		F74FED6E2814906400CDBC29 /* profileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74FED6D2814906400CDBC29 /* profileTableViewController.swift */; };
 		F7679ECD2814D23500EAC7B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7679ECC2814D23500EAC7B4 /* ViewController.swift */; };
+		F78C4D352814FD3D006980E5 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C4D342814FD3D006980E5 /* DateTableViewCell.swift */; };
+		F78C4D3728150751006980E5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C4D3628150751006980E5 /* DetailViewController.swift */; };
+		F78C4D392815111B006980E5 /* GenerateIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C4D382815111B006980E5 /* GenerateIdeaViewController.swift */; };
 		F7A3E1702814C49B00A5AC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A3E16F2814C49B00A5AC75 /* Assets.xcassets */; };
 		F7AB269E2811CF1E004250DD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F7AB269D2811CF1E004250DD /* FirebaseAuth */; };
 		F7AB26A02811CF1E004250DD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F7AB269F2811CF1E004250DD /* FirebaseDatabase */; };
@@ -28,6 +31,9 @@
 		F71A07EC28130A9500060AC3 /* users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
 		F74FED6D2814906400CDBC29 /* profileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTableViewController.swift; sourceTree = "<group>"; };
 		F7679ECC2814D23500EAC7B4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F78C4D342814FD3D006980E5 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		F78C4D3628150751006980E5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F78C4D382815111B006980E5 /* GenerateIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateIdeaViewController.swift; sourceTree = "<group>"; };
 		F7A3E16F2814C49B00A5AC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7AB26A32811D713004250DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7AC539F28117A4800332268 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 				F7DA16472804A4210010424A /* AppDelegate.swift */,
 				F7DA16492804A4210010424A /* SceneDelegate.swift */,
 				F7DA164D2804A4210010424A /* Main.storyboard */,
+				F78C4D382815111B006980E5 /* GenerateIdeaViewController.swift */,
+				F78C4D3628150751006980E5 /* DetailViewController.swift */,
+				F78C4D342814FD3D006980E5 /* DateTableViewCell.swift */,
 				F74FED6D2814906400CDBC29 /* profileTableViewController.swift */,
 				F7AC539F28117A4800332268 /* loginViewController.swift */,
 				F7DA16522804A4230010424A /* LaunchScreen.storyboard */,
@@ -171,9 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78C4D392815111B006980E5 /* GenerateIdeaViewController.swift in Sources */,
+				F78C4D3728150751006980E5 /* DetailViewController.swift in Sources */,
 				F74FED6E2814906400CDBC29 /* profileTableViewController.swift in Sources */,
 				F7DA16482804A4210010424A /* AppDelegate.swift in Sources */,
 				F71A07EB2812FF8E00060AC3 /* signloginViewController.swift in Sources */,
+				F78C4D352814FD3D006980E5 /* DateTableViewCell.swift in Sources */,
 				F7DA164A2804A4210010424A /* SceneDelegate.swift in Sources */,
 				F7679ECD2814D23500EAC7B4 /* ViewController.swift in Sources */,
 				F71A07ED28130A9500060AC3 /* users.swift in Sources */,

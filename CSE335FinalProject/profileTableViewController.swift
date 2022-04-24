@@ -10,95 +10,118 @@ import Firebase
 
 class profileTableViewController: UITableViewController {
 
+    
+    @IBOutlet var dateTableView: UITableView!
+    //model
+    var dateIdeaList:DateIdeas = DateIdeas() //get the date ideas from the user
     //let viewModel = AppViewModel()
     private let database = Database.database().reference()
-    var dateIdeas: [DateIdeas]
     var username:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Successful Sign Up!")
         print(username!)
         
-        /*
+        //user model from firebase
+        //var currentUser:NSDictionary?
         //using username, get the user data from firebase
-        database.child("users").observeSingleEvent(of: .value, with: {snapshot in
+        database.child("users").child("user0").observeSingleEvent(of: .value, with: {snapshot in
             let value = snapshot.value as? NSDictionary
+            //currentUser = value!
             let username = value?["username"] as? String ?? ""
             //let username = value["username"]
             print("Username: \(username)")
             
+            //create new user class
             
         })
-         */
+        
+        //store current user objects into a class
+        
+         
         
         
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dateIdeaList.getCount()
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dateIdeaCell", for: indexPath) as! DateTableViewCell
 
         // Configure the cell...
-
+        let dateItem = dateIdeaList.getDateObject(item: indexPath.row)
+        
+        cell.cellTitle.text = dateItem.title
+        cell.cellImage.image = UIImage(named: dateItem.thumbnail!)
+        
         return cell
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt fromIndexPath: IndexPath)-> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        
+        dateIdeaList.removeDateObject(item: indexPath.row)
+        self.dateTableView.beginUpdates()
+        self.dateTableView.deleteRows(at: [indexPath], with: .automatic)
+        self.dateTableView.endUpdates()
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    @IBAction func addButton(_ sender: Any) {
+        
+        //randomly generate a date idea
+        let title = ["Breakfast", "Lunch", "Dinner"]
+        let index = Int.random(in: 0...2)
+        let selectedDate = title[index]
+        
+        let loc = ["Tempe", "Mesa", "Chandler"]
+        let indexLoc = Int.random(in:0...2)
+        let selectedLoc = loc[indexLoc]
+        
+        self.dateIdeaList.addDateIdea(title: selectedDate, description: "Get some \(selectedDate) with your loved one at \(selectedLoc)!", location: selectedLoc, thumbnail: "heart_full.png")
+        let indexPath = IndexPath(row: self.dateIdeaList.getCount() - 1, section: 0)
+        self.dateTableView.beginUpdates()
+        self.dateTableView.insertRows(at: [indexPath], with: .automatic)
+        self.dateTableView.endUpdates()
+           
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //going into detailed view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       
+        let selectedIndex: IndexPath = self.dateTableView.indexPath(for: sender as! UITableViewCell)!
+        let dateIdea = dateIdeaList.getDateObject(item: selectedIndex.row)
+        let viewController: DetailViewController = segue.destination as! DetailViewController
+        
+        if(segue.identifier == "toDetailView"){
+            //passing the data into the detail view
+            viewController.selectedTitle = dateIdea.title
+            viewController.selectedDes = dateIdea.description
+            viewController.selectedImage = dateIdea.thumbnail
+            viewController.selectedLocation = dateIdea.location
+            //viewController.selectedDateNumber = selectedIndex.row
+        }
+        
+        
+        
     }
-    */
+    
 
 }

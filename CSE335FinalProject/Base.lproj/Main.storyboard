@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -221,7 +220,7 @@
         <scene sceneID="agc-9i-GpO">
             <objects>
                 <tableViewController id="iNd-Dq-AyB" customClass="profileTableViewController" customModule="CSE335FinalProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3FI-0Y-C1Z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="180" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3FI-0Y-C1Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -230,16 +229,21 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="QuickDate List" id="mW3-Sm-fyN">
+                                    <barButtonItem key="leftBarButtonItem" title="Add" image="plus" catalog="system" id="2W5-CQ-BcU">
+                                        <connections>
+                                            <action selector="addButton:" destination="iNd-Dq-AyB" id="QNG-mW-MBf"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" title="UserProfile" image="person.circle.fill" catalog="system" id="YD6-QT-kuQ"/>
                                 </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="159" id="K0K-1s-ahK">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="159"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="15" reuseIdentifier="dateIdeaCell" rowHeight="161" id="K0K-1s-ahK" customClass="DateTableViewCell" customModule="CSE335FinalProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="161"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K0K-1s-ahK" id="av2-vn-PFY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0017" translatesAutoresizingMaskIntoConstraints="NO" id="kkS-PX-8wb">
@@ -247,21 +251,19 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Romance at the Park" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExK-3c-8eM">
-                                            <rect key="frame" x="20" y="111" width="189" height="26"/>
+                                            <rect key="frame" x="113" y="126" width="189" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38O-D5-kcj">
-                                            <rect key="frame" x="293" y="109" width="101" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" systemColor="systemRedColor"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="filled" title="View"/>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImage" destination="kkS-PX-8wb" id="GsQ-Dk-zh8"/>
+                                    <outlet property="cellTitle" destination="ExK-3c-8eM" id="tXO-KD-sws"/>
+                                    <segue destination="IqW-DH-jtL" kind="show" identifier="toDetailView" id="2Dl-wn-r3t"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -270,21 +272,23 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Add" image="plus" catalog="system" id="2W5-CQ-BcU"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="IU5-e1-vqW"/>
                         <barButtonItem title="Clear List" id="J4I-PE-cfR"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Efy-Og-3z8"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dateTableView" destination="3FI-0Y-C1Z" id="ZFy-RZ-huO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVj-3w-crt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2853.6231884057975" y="89.732142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="dg8-7j-and">
             <objects>
-                <viewController id="IqW-DH-jtL" sceneMemberID="viewController">
+                <viewController id="IqW-DH-jtL" customClass="DetailViewController" customModule="CSE335FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uFp-xC-4a3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,6 +348,14 @@
                         <viewLayoutGuide key="safeArea" id="GOP-SD-gA1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q2l-we-FQy"/>
+                    <connections>
+                        <outlet property="dateIdeaDes" destination="n3N-P7-Ap9" id="vfG-cR-EdK"/>
+                        <outlet property="dateIdeaIMG" destination="vmL-6r-ssA" id="jQZ-zB-WYS"/>
+                        <outlet property="dateIdeaTitle" destination="qln-bn-lsw" id="46f-XS-tR1"/>
+                        <outlet property="selectedDateNumber" destination="tnN-Cw-Evb" id="wkJ-RK-Dsa"/>
+                        <outlet property="selectedMap" destination="81M-Qu-OLe" id="cQP-Yu-vxE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dX8-om-czd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,10 +429,10 @@
             </objects>
             <point key="canvasLocation" x="3580" y="822"/>
         </scene>
-        <!--View Controller-->
+        <!--Generate Idea View Controller-->
         <scene sceneID="Wwv-FI-61N">
             <objects>
-                <viewController id="gca-bB-gga" sceneMemberID="viewController">
+                <viewController id="gca-bB-gga" customClass="GenerateIdeaViewController" customModule="CSE335FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M2l-Qr-1gf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,7 +444,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Choose a category and will generate a date for you!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mjf-Ii-X8D">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Generate a Random Idea" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mjf-Ii-X8D">
                                 <rect key="frame" x="20" y="201" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -440,28 +452,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-9n-F1o">
-                                <rect key="frame" x="168" y="270" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="wFZ-YN-0Vc">
-                                    <children>
-                                        <command title="Item 1" id="NI5-8C-l4s"/>
-                                        <command title="Item 2" id="yS1-9R-EZy"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-jR-hb4">
-                                <rect key="frame" x="65" y="379" width="285" height="35"/>
+                                <rect key="frame" x="65" y="251" width="285" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Generate"/>
+                                <connections>
+                                    <action selector="genAction:" destination="gca-bB-gga" eventType="touchUpInside" id="HqS-VJ-dff"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dBg-jV-nkP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xy8-gJ-a6A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgi-bj-zPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
