@@ -12,22 +12,24 @@ class profileTableViewController: UITableViewController {
 
     //let viewModel = AppViewModel()
     private let database = Database.database().reference()
+    var dateIdeas: [DateIdeas]
     var username:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Successful Sign Up!")
         print(username!)
         
+        /*
         //using username, get the user data from firebase
         database.child("users").observeSingleEvent(of: .value, with: {snapshot in
-            guard let value = snapshot.value as? [String: Any] else{
-                return
-            }
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
             //let username = value["username"]
-            print("Username: \(value)")
+            print("Username: \(username)")
             
             
         })
+         */
         
         
     }

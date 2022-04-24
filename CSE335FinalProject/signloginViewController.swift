@@ -83,6 +83,9 @@ class signloginViewController: UIViewController {
             if(!viewModel.isSignedIn){
                 signinErrMSG.text = "Invalid Email or Username. Try Again."
             }
+            else{
+                
+            }
            
         }
         
@@ -96,8 +99,35 @@ class signloginViewController: UIViewController {
     }
     //if user is in firebase return true, else false
     func checkUser(inputUser:String)->Bool{
-                        
-        return false
+        var users: [String] = []
+        let database = Database.database().reference()
+        
+        
+        database.child("users").child("user0").observe(.value, with: {snapshot in
+           
+            //for j in 0 ... snapshot.childrenCount{
+                let value = snapshot.value as? NSDictionary
+                let username = value?["username"] as? String ?? ""
+                //let username = value["username"]
+                
+                print("Username: \(username)")
+                users.append(username)
+                
+           // }
+            
+            
+        })
+        
+        if users.contains(inputUser){
+            print("Contains the same user!!")
+            return true
+        }
+        else{
+            print("Does not contain the same user!!")
+            return false
+            
+        }
+       
     }
     
     override func viewDidLoad() {
